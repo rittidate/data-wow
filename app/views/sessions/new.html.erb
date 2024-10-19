@@ -3,15 +3,6 @@
 
   <%= form_with(model: @user, url: sessions_path, local: true) do |f| %>
 
-    <!-- Display error message of form -->
-    <% if f.object.errors.full_messages.any? %>
-      <ul class='error'>
-        <% f.object.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    <% end %>
-
     <!-- Field of sessoin form -->
     <div class='row'>
       <%= f.label :email %>

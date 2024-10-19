@@ -18,6 +18,7 @@
   </head>
 
   <body>      
+    <%= render template: 'layouts/flash' %>
 
     <% if user_signed_in? %>
       <%= link_to 'Sign Out', logout_path, class: 'sign_out', method: :get %>
