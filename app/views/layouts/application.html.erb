@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Myapp" %></title>
+    <title><%= content_for(:title) || "Data Wow" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
@@ -17,7 +17,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body>      
+
+    <% if user_signed_in? %>
+      <%= link_to 'Sign Out', logout_path, class: 'sign_out', method: :get %>
+    <% end %>
     <%= yield %>
+
   </body>
 </html>
